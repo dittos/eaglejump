@@ -1,0 +1,23 @@
+plugins {
+    id "com.google.protobuf" version "0.8.8"
+}
+
+dependencies {
+    api 'com.google.protobuf:protobuf-java:3.8.0'
+    api 'org.reactivestreams:reactive-streams:1.0.2'
+    protobuf 'com.google.protobuf:protobuf-java:3.8.0'
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.8.0'
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir "build/generated/source/proto/main/java"
+        }
+    }
+}

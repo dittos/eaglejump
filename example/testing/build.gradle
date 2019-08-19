@@ -1,0 +1,4 @@
+dependencies {
+    testImplementation project(':example:app')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

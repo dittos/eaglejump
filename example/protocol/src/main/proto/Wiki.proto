@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package example;
+
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_package = "org.sapzil.eaglejump.example.protocol";
+option java_outer_classname = "WikiProto";
+
+service DocumentService {
+    rpc GetDocument (GetDocumentRequest) returns (DocumentDTO);
+    rpc CreateDocument (CreateDocumentRequest) returns (DocumentDTO);
+    rpc UpdateDocument (UpdateDocumentRequest) returns (DocumentDTO);
+}
+
+message DocumentDTO {
+    string id = 1;
+    string title = 2;
+    string slug = 3;
+    string body = 4;
+    google.protobuf.Timestamp updated_at = 5;
+}
+
+message GetDocumentRequest {
+    string slug = 1;
+}
+
+message CreateDocumentRequest {
+    DocumentDTO document = 1;
+}
+
+message UpdateDocumentRequest {
+    DocumentDTO document = 1;
+}

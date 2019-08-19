@@ -1,0 +1,5 @@
+dependencies {
+    implementation project(':example:model')
+    api project(':example:protocol')
+    implementation group: 'com.h2database', name: 'h2', version: '1.4.199'
+}

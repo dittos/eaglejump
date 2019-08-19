@@ -1,0 +1,24 @@
+apply plugin: 'kotlin'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
+    api "com.google.inject:guice:4.1.0"
+    api "io.projectreactor:reactor-core:3.2.9.RELEASE"
+    api group: 'org.hibernate', name: 'hibernate-core', version: '5.4.3.Final'
+    api group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.3.Final'
+
+    api "com.linecorp.armeria:armeria:0.90.2"
+    api 'com.google.protobuf:protobuf-java-util:3.8.0'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
